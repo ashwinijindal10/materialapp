@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-title>Order Details</mat-card-title>
+    <mat-card-content>
+        <material-form-field>
+            <input matInput placeholder="Order Date" [matDatepicker]="orderDate">
+            <mat-datepicker-toggle matSuffix [for]="orderDate"></mat-datepicker-toggle>
+            <mat-datepicker #orderDate></mat-datepicker> 
+        </material-form-field>
+    </mat-card-content>
+</mat-card>

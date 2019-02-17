@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title>New Customer </mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" [formControl]="emailFormCtrl" [errorStateMatcher]="matcher">
+        <mat-hint align="end">Hint: email@domain.com</mat-hint>
+        <mat-error align="end" *ngIf="emailFormCtrl.hasError('email') && !emailFormCtrl.hasError('required')">
+          please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="First" [formControl]="FirstCtrl">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last" [formControl]="LastCtrl">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Address" [formControl]="AddressCtrl"></textarea>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <span matPrefix>+91</span>
+        <input matInput placeholder="Phone" [formControl]="PhoneCtrl">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="openSnackbar()">SAVE</button>
+  </mat-card-actions>
+</mat-card>
